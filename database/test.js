@@ -10,11 +10,18 @@ async function test() {
 
     await User.create({
         email: 'dummyuser@gmail.com',
-        passwordDigest: 'dummyUserPassword'
+        passwordDigest: 'dummyUserPassword',
+        username: 'Fish',
+    });
+
+    await User.create({
+        email: 'testuser@gmail.com',
+        passwordDigest: 'testUserPassword',
+        username: 'Test',
     });
 
     const users = await User.find();
-    console.log(users);
+    console.log(users)
 };
 
 test();
